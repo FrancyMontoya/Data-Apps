@@ -8,7 +8,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Load the data
-df = pd.read_csv('Data/price.csv')
+df = pd.read_csv('C:/Users/diego/Documents/GitHub/Data-Apps/Price Optimization/Data/price.csv')
 
 def fun_optimize(var_opt, var_range, var_cost, df):
     """[summary]
@@ -70,6 +70,6 @@ def fun_optimize(var_opt, var_range, var_cost, df):
     return [profit, fig_PriceVsRevenue, fig_PriceVsQuantity, round(max_val['Price'].values[0],2),round(max_val['Revenue'].values[0],3)]
 
 
-
+fun_optimize('price',[29, 311] , 80, df)
 
     

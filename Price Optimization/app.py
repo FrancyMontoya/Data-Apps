@@ -12,6 +12,11 @@ from dash.dependencies import Input, Output, State
 import Python.optimize_price
 import Python.optimize_quantity
 import dash_daq as daq
+import streamlit as st
+
+
+
+
 
 group_colors = {"control": "light blue", "reference": "red"}
 
@@ -26,6 +31,8 @@ server = app.server
 df = pd.read_csv('Data/price.csv')
 df.head(10)
 
+
+
 # App Layout
 app.layout = html.Div(
     children=[
@@ -37,7 +44,8 @@ app.layout = html.Div(
             children=[
                 html.H2(className="h2-title",
                         children="PRODUCT PRICE OPTIMIZATION"),
-
+               
+                
                 html.Div(
                     className="div-logo",
                     children=html.Img(
@@ -56,6 +64,7 @@ app.layout = html.Div(
                             className="padding-top-bot",
                             children=[
                                 html.H6("OPTIMIZE"),
+                                st.write(df.head(10)),
                                 dcc.RadioItems(
                                     id="selected-var-opt",
                                     options=[
@@ -77,6 +86,8 @@ app.layout = html.Div(
                                 ),
                             ],
                         ),
+                        
+                                              
                         html.Br(),
                         html.Div(
                             className="padding-top-bot",
